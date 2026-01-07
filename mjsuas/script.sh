@@ -1,5 +1,5 @@
-!/bin/bash
-# scripts/my-script.sh
+#!/bin/bash
+# mjsuas/script.sh
 
 echo "---Script Start ---"
 
