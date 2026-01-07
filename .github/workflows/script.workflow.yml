@@ -21,25 +21,26 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Ensure script is executable
-        run: chmod +x scripts/script.sh
+        run: chmod +x mjsuas/script.sh
 
       - name: Install ShellCheck (Linter)
         run: sudo apt-get update && sudo apt-get install -y shellcheck
 
       - name: Run ShellCheck on the script
-        run: shellcheck scripts/script.sh
+        run: shellcheck mjsuas/script.sh
 
       - name: Install Flawfinder (SAST Tool)
         run: sudo apt-get install -y flawfinder
 
       - name: Run Flawfinder security scan on script
-        run: flawfinder scripts/script.sh
+        run: flawfinder mjsuas/script.sh
 
       - name: Show test message
         run: echo "Running simple test assertion..."
 
       - name: Execute Test Script
-        run: ./scripts/script.sh
+        run: ./mjsuas/script.sh
+
 
   package-and-deploy:
     needs: build-and-test
